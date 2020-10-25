@@ -1,0 +1,18 @@
+.upload_button {
+    display: inline-block;
+    padding: 8px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    background-color: #F2F2F2;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-left: 43.2%;
+}
+
+    .upload_button:active {
+        background-color: #F2F2F2;
+        transform: translateY(2px);
+    }
