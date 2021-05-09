@@ -23,7 +23,7 @@ class FileSelectorComponent extends Component {
     // File content to be displayed after 
     // file upload is complete 
     fileData = () => {    
-        if (this.props.hash_ob["info_vis"] === true) {
+        if (this.props.hash_ob["info_vis"] === true && this.props.hash_ob["valid_size"] === true) {
             return (
                 <div>
                     <h2>File Details:</h2>
@@ -54,7 +54,7 @@ class FileSelectorComponent extends Component {
                         <option value="sha512">sha512</option>
                         <option value="ripemd160">ripemd160</option>
                     </select>
-                    <span> and then choose a file </span>
+                    <span> and then choose a file (less than 10MB) </span>
                     <input type="file" onChange={onFileChange} />
                 </div>
                 {this.fileData()}

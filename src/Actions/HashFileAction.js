@@ -29,6 +29,7 @@ export const hash_file = (hash_type, file) => {
         var hash = '';
         
         if (hash_type === 'md5') {
+            console.log(file);
             reader.onloadend = function () {
                 text = (reader.result);
                 hash_value = CryptoJS.MD5(CryptoJS.enc.Latin1.parse(text));
@@ -37,8 +38,9 @@ export const hash_file = (hash_type, file) => {
                 dispatch(setHashFile(hash_obj));
             }
 
-            reader.readAsBinaryString(file);
-
+            if( file !== undefined ){
+                reader.readAsBinaryString(file);
+            }
 
         } else if (hash_type === 'sha1') {
             reader.onloadend = function () {
@@ -49,8 +51,9 @@ export const hash_file = (hash_type, file) => {
                 dispatch(setHashFile(hash_obj));
             }
 
-            reader.readAsBinaryString(file);
-
+            if( file !== undefined ){
+                reader.readAsBinaryString(file);
+            }
 
         } else if (hash_type === 'sha3') {
             reader.onloadend = function () {
@@ -61,8 +64,9 @@ export const hash_file = (hash_type, file) => {
                 dispatch(setHashFile(hash_obj));
             }
 
-            reader.readAsBinaryString(file);
-
+            if( file !== undefined ){
+                reader.readAsBinaryString(file);
+            }
 
         } else if (hash_type === 'sha224') {
             reader.onloadend = function () {
@@ -73,8 +77,9 @@ export const hash_file = (hash_type, file) => {
                 dispatch(setHashFile(hash_obj));
             }
 
-            reader.readAsBinaryString(file);
-
+            if( file !== undefined ){
+                reader.readAsBinaryString(file);
+            }
 
         } else if (hash_type === 'sha256') {
             reader.onloadend = function () {
@@ -85,8 +90,9 @@ export const hash_file = (hash_type, file) => {
                 dispatch(setHashFile(hash_obj));
             }
 
-            reader.readAsBinaryString(file);
-
+            if( file !== undefined ){
+                reader.readAsBinaryString(file);
+            }
 
         } else if (hash_type === 'sha384') {
             reader.onloadend = function () {
@@ -97,7 +103,9 @@ export const hash_file = (hash_type, file) => {
                 dispatch(setHashFile(hash_obj));
             }
 
-            reader.readAsBinaryString(file);
+            if( file !== undefined ){
+                reader.readAsBinaryString(file);
+            }
 
 
         } else if (hash_type === 'sha512') {
@@ -109,8 +117,9 @@ export const hash_file = (hash_type, file) => {
                 dispatch(setHashFile(hash_obj));
             }
 
-            reader.readAsBinaryString(file);
-
+            if( file !== undefined ){
+                reader.readAsBinaryString(file);
+            }
 
         } else if (hash_type === 'ripemd160') {
             reader.onloadend = function () {
@@ -121,14 +130,11 @@ export const hash_file = (hash_type, file) => {
                 dispatch(setHashFile(hash_obj));
             }
 
-            reader.readAsBinaryString(file);
+            if( file !== undefined ){
+                reader.readAsBinaryString(file);
+            }
 
-        } else {
-                //TODO: no file passed 
-                dispatch(setHashFile(hash_obj));  
         }
-
-
 
     }
     

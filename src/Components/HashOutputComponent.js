@@ -8,13 +8,15 @@ const mapStateToProps = state => {
 		type_text: state.updateHash.hash_type,
 		hash_file: state.updateFile.hash_value,
 		type_file: state.updateFile.hash_type,
-		file_vis: state.updateFile.info_vis
+		file_vis: state.updateFile.info_vis,
+		valid_size: state.updateFile.valid_size
 	}
 }
 
 class HashOutputComponent extends React.Component {
 	render() {
-		const { hash_text, type_text, hash_file, type_file, file_vis } = this.props;
+		const { hash_text, type_text, hash_file, type_file, file_vis, valid_size} = this.props;
+
 		if (file_vis === false) {
 			return (
 				<div className="HashOutputComponent">
@@ -23,12 +25,22 @@ class HashOutputComponent extends React.Component {
 				</div>
 			);
 		} else {
-			return (
-				<div className="HashOutputComponent">
-					<p className="hash_title">{type_file}</p>
-					<p className="hash_return">{hash_file}</p>
-				</div>
-			);
+			if (valid_size === true){
+				return (
+					<div className="HashOutputComponent">
+						<p className="hash_title">{type_file}</p>
+						<p className="hash_return">{hash_file}</p>
+					</div>
+				);
+			} else{
+				console.log('HERE2')
+				return (
+					<div className="HashOutputComponent">
+						<p className="hash_title">FILE IS TOO LARGE</p>
+					</div>
+				);
+			}
+			
         }
 		
 	}
