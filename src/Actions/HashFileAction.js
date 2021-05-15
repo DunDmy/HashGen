@@ -1,4 +1,3 @@
-import { store } from '../index.js';
 var CryptoJS = require("crypto-js");
 
 
@@ -6,6 +5,15 @@ const setHashFile = (data) => ({
     type: 'UPLOAD',
     payload: data
 })
+
+const setResetFile = (data) => ({
+    type: 'RESET',
+    payload: data
+})
+
+export const rest_file = (dispatch) =>{
+    return dispatch(setResetFile('RESET'));
+}
 
 export const hash_file = (hash_type, file) => {
     return function (dispatch) {
@@ -26,7 +34,6 @@ export const hash_file = (hash_type, file) => {
         var hash_value = '';
         var type = '';
         var text = '';
-        var hash = '';
         
         if (hash_type === 'md5') {
             console.log(file);

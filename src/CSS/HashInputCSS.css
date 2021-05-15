@@ -12,7 +12,7 @@
     border-radius: 10px;
     margin: 1px;
     padding: 1px;
-    width: 50%;
+    width: 56%;
     height: 300px;
     resize: none;
     outline: none;
@@ -20,19 +20,28 @@
 }
 
 .drop_down {
-    margin-right: 37%;
-    padding: 8px 20px;
-    border-radius: 10px;
+    display: inline-block;
+    padding: 8px 2px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
     outline: none;
     background-color: #F2F2F2;
+    border-radius: 10px;
     border: 1px solid black;
 }
 
 .drop_down_file {
-    padding: 8px 20px;
-    border-radius: 10px;
+    display: inline-block;
+    padding: 8px 2px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
     outline: none;
     background-color: #F2F2F2;
+    border-radius: 10px;
     border: 1px solid black;
 }
 
