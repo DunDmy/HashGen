@@ -1,6 +1,7 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux';
 import { hash_file, rest_file } from '../Actions/HashFileAction.js';
+import Grid from '@material-ui/core/Grid';
 import '../CSS/FileSelectorCSS.css';
 
 const mapStateToProps = state => {
@@ -60,8 +61,9 @@ class FileSelectorComponent extends Component {
     
     render() {
         return (
-            <div>
-                <div>
+            <Grid container spacing={0} container spacing={0} justify="center"
+            alignItems="center">
+                <Grid item xs={12} >
                     <span>Please select the hash algorithm </span>
                     <select className="drop_down_file" name="hash_type_file" id="hash_type_file" >
                         <option value="md5">md5</option>
@@ -75,9 +77,10 @@ class FileSelectorComponent extends Component {
                     </select>
                     <span> and then choose a file (less than 10MB) </span>
                     <input name="input_file" id="input_file" type="file" onChange={this.fileChangedHandler}/>
-                </div>
-                {this.fileData()}
-            </div>
+                    {this.fileData()}
+                </Grid>
+            </Grid>
+            
         );
     }
 } 

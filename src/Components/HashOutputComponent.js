@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Grid from '@material-ui/core/Grid';
 import '../CSS/HashOutputCSS.css';
 
 const mapStateToProps = state => {
@@ -20,17 +21,29 @@ class HashOutputComponent extends React.Component {
 
 		if (file_vis === false) {
 			return (
-				<div className="HashOutputComponent">
-					<p className="hash_title">{type_text}</p>
-					<p className="hash_return">{hash_text}</p>
-				</div>
+				<Grid container spacing={0} justify="center"
+				alignItems="center">
+					<Grid item xs={6} >
+						<div >
+							<p className="hash_title">{type_text}</p>
+							<p className="hash_return">{hash_text}</p>
+						</div>
+					</Grid>		
+				</Grid>
+				
 			);
 		} else {
 			return (
-				<div className="HashOutputComponent">
-					<p className="hash_title">{type_file}</p>
-					<p className="hash_return">{hash_file}</p>
-				</div>
+				<Grid container spacing={0} justify="center"
+				alignItems="center">
+					<Grid item xs={12} >
+						<div >
+							<p className="hash_title">{type_file}</p>
+							<p className="hash_return">{hash_file}</p>
+						</div>
+					</Grid>
+				</Grid>
+		
 			);					
         }
 		
