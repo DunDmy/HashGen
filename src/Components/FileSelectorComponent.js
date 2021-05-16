@@ -32,10 +32,10 @@ class FileSelectorComponent extends Component {
                     <h2>File Details:</h2>
                     <p>File Name: {this.props.hash_ob["file_info"]["name"]}</p>
                     <p>File Type: {this.props.hash_ob["file_info"]["type"]}</p>
-                    <p>File Size: {Math.round(this.props.hash_ob["file_info"]["size"] / 1024)} Kilobytes</p>
+                    <p>File Size: {this.props.hash_ob["file_info"]["size"]} Kilobytes</p>
                     <p>
                         Last Modified:{" "}
-                        {this.props.hash_ob["file_info"]["lastModifiedDate"].toDateString()}
+                        {this.props.hash_ob["file_info"]["lastModifiedDate"]}
                     </p>
                 </div>
             );
