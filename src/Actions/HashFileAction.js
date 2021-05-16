@@ -154,7 +154,12 @@ function action_dispatch_builder(type, hash_value, hash_obj, file) {
     hash_obj["file_info"]["name"] = file["name"];
     hash_obj["file_info"]["size"] = file["size"];
     hash_obj["file_info"]["type"] = file["type"];
-    hash_obj["file_info"]["lastModifiedDate"] = file["lastModifiedDate"];
+    // used to handle the erro on the iOS
+    if(file["lastModifiedDate"] !== undefined){
+        hash_obj["file_info"]["lastModifiedDate"] = file["lastModifiedDate"];
+    }else{
+        hash_obj["file_info"]["lastModifiedDate"] = "no date available";
+    }
     return hash_obj;
 }
 

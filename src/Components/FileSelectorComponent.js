@@ -42,6 +42,10 @@ class FileSelectorComponent extends Component {
     };
 
     fileChangedHandler = (event) => {
+        // no file has been passed
+        if(event.target.files[0] === undefined){
+            return 0;
+        }
         let file_size = event.target.files[0].size;
         // clear text when file is uploaded
         document.getElementById("hash_text").value = "";
